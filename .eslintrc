@@ -4,7 +4,12 @@
 		"sourceType": "module"
 	},
 	"parser": "@typescript-eslint/parser",
-	"extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended", "plugin:jest/recommended", "standard"],
+	"extends": [
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended",
+		"plugin:jest/recommended",
+		"standard"
+	],
 	"rules": {
 		"prettier/prettier": 0,
 		"no-tabs": 0,
@@ -18,7 +23,7 @@
 		"camelcase": 0,
 		"@typescript-eslint/no-namespace": 0,
 		"jest/no-done-callback": 0,
-		"eqeqeq": 1,
+		"eqeqeq": 0,
 		"@typescript-eslint/no-this-alias": 1,
 		"jest/valid-expect-in-promise": 1,
 		"jest/no-conditional-expect": 1,
