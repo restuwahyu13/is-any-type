@@ -70,7 +70,7 @@ npm install is-any-type -D or yarn add is-any-type -D
   ```typescript
   import { isType } from 'is-any-type'
 
-  describe('is.test.ts', () => {
+  describe('Testing With Jest', () => {
     let is
 
     beforeEach(() => {
