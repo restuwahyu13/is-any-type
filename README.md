@@ -163,7 +163,7 @@ For information on bugs related to package libraries, please visit
 
 ### Contributing
 
-Want to make **Streambox-Collection** more perfect ? Let's contribute and follow the
+Want to make **Is-Any-Type** more perfect ? Let's contribute and follow the
 [contribution guide.](https://github.com/restuwahyu13/is-any-type/blob/main/CONTRIBUTING.md)
 
 ### License
