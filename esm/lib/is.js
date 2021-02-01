@@ -1,23 +1,24 @@
 export default function isType(data) {
     const isArray = Array.isArray(data) && 'array';
     const isBuffer = Buffer.isBuffer(data) && 'buffer';
-    const isObject = data === {} && 'object';
+    const isPromise = data instanceof Promise && 'promise';
+    const isFunction = data instanceof Function && 'function';
+    const isObject = data === Object.assign({}) && 'object';
     const isNull = data === null && 'null';
     const isUndefined = data === undefined && 'undefined';
-    const isPromise = data instanceof Promise && 'promise';
-    const isGrouping = isArray || isBuffer || isObject || isNull || isUndefined || isPromise;
-    const isCheck = !isGrouping ? typeof data : isGrouping;
+    const isGroup = isArray || isBuffer || isPromise || isFunction || isObject || isNull || isUndefined;
+    const isCheck = isGroup || typeof data;
     const isTypeData = [
-        'number',
-        'string',
         'array',
-        'object',
-        'undefined',
-        'null',
-        'function',
-        'boolean',
+        'buffer',
         'promise',
-        'buffer'
+        'function',
+        'object',
+        'null',
+        'undefined',
+        'string',
+        'number',
+        'boolean'
     ];
     const isMatch = isTypeData.indexOf(isCheck);
     const isResult = isTypeData[isMatch];
