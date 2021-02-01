@@ -61,4 +61,10 @@ describe('is.test.ts', () => {
 		expect(type).toBeDefined()
 		expect(type).toBe('undefined')
 	})
+
+	test('is instance value is from boolean', () => {
+		const type = is(true)
+		expect(type).toBeDefined()
+		expect(type).toBe('boolean')
+	})
 })
