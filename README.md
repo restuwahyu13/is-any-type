@@ -19,7 +19,7 @@
 - [Contributing](#contributing)
 - [License](#license)
 
-## Installation Package
+## Installation
 
 ```sh
 npm install is-any-type -D or yarn add is-any-type -D
@@ -41,8 +41,9 @@ npm install is-any-type -D or yarn add is-any-type -D
   let isFunction = isType(() => {})
   let isPromise = isType(new Promise((resolve) => resolve('hello wordl')))
   let isBuffer = isType(global)
+  let isBoolean = isType(true)
 
-  Promise.all([isString, isNumber, isNull, isUndefined, isObject, isArray, isFunction, isPromise, isBuffer])
+  Promise.all([isString, isNumber, isNull, isUndefined, isObject, isArray, isFunction, isPromise, isBuffer, isBoolean])
   .then(console.log)
   ```
 
@@ -60,8 +61,9 @@ npm install is-any-type -D or yarn add is-any-type -D
   let isFunction: string = isType(() => {})
   let isPromise: string = isType(new Promise((resolve) => resolve('hello wordl')))
   let isBuffer: string = isType(Buffer.from('hello wordl'))
+  let isBoolean = isType(true)
 
-  Promise.all([isString, isNumber, isNull, isUndefined, isObject, isArray, isFunction, isPromise, isBuffer])
+  Promise.all([isString, isNumber, isNull, isUndefined, isObject, isArray, isFunction, isPromise, isBuffer, isBoolean])
   .then(console.log)
   ```
 
