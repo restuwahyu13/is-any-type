@@ -49,18 +49,18 @@ npm install is-any-type -D or yarn add is-any-type -D
 
 - #### Example Usage Using ES6
 
-  ```typescript
+  ```javascript
   import { isType } from 'is-any-type'
 
-  let isString: string = isType('hello wordl')
-  let isNumber: string = isType(new Date().getFullYear)
-  let isNull: string = isType(null)
-  let isUndefined: string = isType(undefined)
-  let isObject: string = isType({})
-  let isArray: string = isType([])
-  let isFunction: string = isType(() => {})
-  let isPromise: string = isType(new Promise((resolve) => resolve('hello wordl')))
-  let isBuffer: string = isType(Buffer.from('hello wordl'))
+  let isString = isType('hello wordl')
+  let isNumber = isType(new Date().getFullYear)
+  let isNull = isType(null)
+  let isUndefined = isType(undefined)
+  let isObject = isType({})
+  let isArray = isType([])
+  let isFunction = isType(() => {})
+  let isPromise = isType(new Promise((resolve) => resolve('hello wordl')))
+  let isBuffer = isType(Buffer.from('hello wordl'))
   let isBoolean = isType(true)
 
   Promise.all([isString, isNumber, isNull, isUndefined, isObject, isArray, isFunction, isPromise, isBuffer, isBoolean])
@@ -133,13 +133,13 @@ npm install is-any-type -D or yarn add is-any-type -D
       expect(type).toBeDefined()
       expect(type).toBe('undefined')
     })
-
-   test('is instance value is from boolean', () => {
-    const type = is(true)
-    expect(type).toBeDefined()
-    expect(type).toBe('boolean')
+    
+    test('is instance value is from boolean', () => {
+      const type = is(true)
+      expect(type).toBeDefined()
+      expect(type).toBe('boolean')
+	  })
   })
- })
   ```
 
 
