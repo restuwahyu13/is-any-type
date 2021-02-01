@@ -19,7 +19,7 @@
 - [Contributing](#contributing)
 - [License](#license)
 
-## Installation Package
+## Installation
 
 ```sh
 npm install is-any-type -D or yarn add is-any-type -D
