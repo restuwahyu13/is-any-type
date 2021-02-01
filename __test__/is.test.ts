@@ -5,11 +5,6 @@ describe('is.test.ts', () => {
 
 	beforeEach(() => {
 		is = isType
-		jest.resetAllMocks()
-	})
-
-	afterAll(() => {
-		jest.clearAllMocks()
 	})
 
 	test('is instance value is from string', () => {
