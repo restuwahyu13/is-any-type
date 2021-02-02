@@ -1,6 +1,6 @@
 {
 	"name": "is-any-type",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "is-any-type is a tool that serves to check the data type of the given value",
 	"main": "./dist/index.js",
 	"module": "./esm/index.js",
