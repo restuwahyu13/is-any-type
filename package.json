@@ -1,6 +1,6 @@
 {
 	"name": "is-any-type",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "is-any-type is a tool that serves to check the data type of the given value",
 	"main": "./dist/index.js",
 	"module": "./esm/index.js",
@@ -19,8 +19,8 @@
 		"test:coverage": "jest --coverage",
 		"test:watch": "jest --watchAll",
 		"test:coveralls": "jest --coverage && coveralls < coverage/lcov.info",
-		"lint": "eslint src/**/*.{ts,spec.ts,test.ts} --fix",
-		"format": "prettier src/**/*.{ts,spec.ts,test.ts} --write",
+		"lint": "eslint src/**/*.ts --fix",
+		"format": "prettier src/**/*.ts --write",
 		"lint:fix": "npm run format && npm run lint"
 	},
 	"author": "Restu Wahyu Saputra <restuwahyu13@gmail.com>",
