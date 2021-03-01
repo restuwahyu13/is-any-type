@@ -32,19 +32,27 @@ npm install is-any-type -D or yarn add is-any-type -D
   ```typescript
   const { isType } = require('is-any-type')
 
-  let isString = isType('hello wordl')
-  let isNumber = isType(new Date().getFullYear)
-  let isNull = isType(null)
-  let isUndefined = isType(undefined)
-  let isObject = isType({})
-  let isArray = isType([])
-  let isFunction = isType(() => {})
-  let isPromise = isType(new Promise((resolve) => resolve('hello wordl')))
-  let isBuffer = isType(global)
-  let isBoolean = isType(true)
+  let isString = isType('hello wordl') // => true
+  let isNumber = isType(new Date().getFullYear) // => true
+  let isNull = isType(null) => true
+  let isUndefined = isType(undefined) // => true
+  let isObject = isType({}) // => true
+  let isArray = isType([]) // => true
+  let isFunction = isType(() => {}) // => true
+  let isPromise = isType(new Promise((resolve) => resolve('hello wordl'))) // => true
+  let isBuffer = isType(Buffer.from('hello world')) // => true
+  let isBoolean = isType(true) // => true
 
-  Promise.all([isString, isNumber, isNull, isUndefined, isObject, isArray, isFunction, isPromise, isBuffer, isBoolean])
-  .then(console.log)
+  let isString = isType(2021) // => false
+  let isNumber = isType('hello world') // => false
+  let isNull = isType(undefined) // => false
+  let isUndefined = isType(null) // => false
+  let isObject = isType({[]) // => false
+  let isArray = isType({}) // => false
+  let isFunction = isType(Promise.resolve('hello world')) // => false
+  let isPromise = isType(() => 'hello world') // => false
+  let isBuffer = isType('hello world') // => false
+  let isBoolean = isType(null) // => false
   ```
 
 - #### Example Usage Using ES6
@@ -52,19 +60,27 @@ npm install is-any-type -D or yarn add is-any-type -D
   ```javascript
   import { isType } from 'is-any-type'
 
-  let isString = isType('hello wordl')
-  let isNumber = isType(new Date().getFullYear)
-  let isNull = isType(null)
-  let isUndefined = isType(undefined)
-  let isObject = isType({})
-  let isArray = isType([])
-  let isFunction = isType(() => {})
-  let isPromise = isType(new Promise((resolve) => resolve('hello wordl')))
-  let isBuffer = isType(Buffer.from('hello wordl'))
-  let isBoolean = isType(true)
+  let isString = isType('hello wordl') // => true
+  let isNumber = isType(new Date().getFullYear) // => true
+  let isNull = isType(null) => true
+  let isUndefined = isType(undefined) // => true
+  let isObject = isType({}) // => true
+  let isArray = isType([]) // => true
+  let isFunction = isType(() => {}) // => true
+  let isPromise = isType(new Promise((resolve) => resolve('hello wordl'))) // => true
+  let isBuffer = isType(Buffer.from('hello world')) // => true
+  let isBoolean = isType(true) // => true
 
-  Promise.all([isString, isNumber, isNull, isUndefined, isObject, isArray, isFunction, isPromise, isBuffer, isBoolean])
-  .then(console.log)
+  let isString = isType(2021) // => false
+  let isNumber = isType('hello world') // => false
+  let isNull = isType(undefined) // => false
+  let isUndefined = isType(null) // => false
+  let isObject = isType({[]) // => false
+  let isArray = isType({}) // => false
+  let isFunction = isType(Promise.resolve('hello world')) // => false
+  let isPromise = isType(() => 'hello world') // => false
+  let isBuffer = isType('hello world') // => false
+  let isBoolean = isType(null) // => false
   ```
 
 - #### Example Usage Using ES6 With Jest
