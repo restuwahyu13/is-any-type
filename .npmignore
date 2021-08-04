@@ -26,3 +26,4 @@ CONTRIBUTING.md
 src/utils/util.http.ts
 src/utils/util.deserialize.ts
 src/utils/util.serialize.ts
+README_V3.md

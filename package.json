@@ -1,7 +1,7 @@
 {
 	"name": "is-any-type",
 	"version": "0.0.4",
-	"description": "is-any-type is a tool that serves to check the data type of the given value",
+	"description": "is-any-type simple functionality alternative to check data type references such as typeof and instanceof",
 	"main": "./dist/index.js",
 	"module": "./esm/index.js",
 	"files": [
@@ -37,21 +37,27 @@
 		"npm": ">=5"
 	},
 	"keywords": [
+		"assert",
+		"expect",
+		"tdd",
+		"bdd",
+		"testing",
+		"assertion",
+		"test",
+		"compare",
+		"browser",
+		"node",
 		"typeof",
 		"is-any-type",
 		"instanceof",
-		"boolean",
-		"function",
-		"array",
-		"object",
-		"simple",
-		"pure",
-		"testing",
-		"test",
 		"check",
-		"is",
-		"promise",
-		"type"
+		"checking",
+		"type check",
+		"validate",
+		"validation",
+		"utility",
+		"javascript",
+		"typescript"
 	],
 	"devDependencies": {
 		"@types/eslint": "^7.2.6",
