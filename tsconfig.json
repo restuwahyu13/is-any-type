@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
 		"outDir": "dist",
-		"target": "ESNext",
+		"target": "ES2019",
 		"module": "CommonJS",
 		"allowJs": true,
 		"moduleResolution": "node",
@@ -12,9 +12,7 @@
 		"skipLibCheck": true,
 		"declaration": true,
 		"noEmitOnError": true,
-		"sourceMap": false,
 		"strict": false,
-		"alwaysStrict": false,
 		"noImplicitAny": false,
 		"typeRoots": ["node_modules/@types"]
 	},

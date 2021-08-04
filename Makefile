@@ -50,13 +50,13 @@ install:
 ## BUILD AUTOMATION
 #########################
 
-build: lfx.o testc.o compile.o
+build: lfx.o compile.o testc.o
 
 lfx.o:
 	${NPM} ${NPM_FLAGS} lint:fix
 
-testc.o:
-	${NPM} ${NPM_FLAGS} test:coveralls
-
 compile.o:
 	${NPM} ${NPM_FLAGS} build
+
+testc.o:
+	${NPM} ${NPM_FLAGS} test:coveralls

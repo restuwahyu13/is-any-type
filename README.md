@@ -1,16 +1,8 @@
 # Is Any Type
 
-[![Build Status](https://travis-ci.org/restuwahyu13/is-any-type.svg?branch=main)](https://travis-ci.org/restuwahyu13/is-any-type)
-[![Coverage Status](https://coveralls.io/repos/github/restuwahyu13/is-any-type/badge.svg?branch=main)](https://coveralls.io/github/restuwahyu13/is-any-type?branch=main)
-[![npm version](https://badge.fury.io/js/is-any-type.svg)](https://badge.fury.io/js/is-any-type)
-![node-current](https://img.shields.io/node/v/is-any-type?style=flat-square)
-![npm](https://img.shields.io/npm/dm/is-any-type)
-![npm bundle size](https://img.shields.io/bundlephobia/min/is-any-type)
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/is-any-type)
-![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/restuwahyu13/is-any-type)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/restuwahyu13/is-any-type/blob/main/CONTRIBUTING.md)
+[![Build Status](https://travis-ci.org/restuwahyu13/is-any-type.svg?branch=main)](https://travis-ci.org/restuwahyu13/is-any-type) [![Coverage Status](https://coveralls.io/repos/github/restuwahyu13/is-any-type/badge.svg?branch=main)](https://coveralls.io/github/restuwahyu13/is-any-type?branch=main) [![npm version](https://badge.fury.io/js/is-any-type.svg)](https://badge.fury.io/js/is-any-type) ![node-current](https://img.shields.io/node/v/is-any-type?style=flat-square) ![npm](https://img.shields.io/npm/dm/is-any-type) ![npm bundle size](https://img.shields.io/bundlephobia/min/is-any-type) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/is-any-type) ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/restuwahyu13/is-any-type) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/restuwahyu13/is-any-type/blob/main/CONTRIBUTING.md)
 
-`is-any-type` is a simple functionality alternative to check data type references such as typeof and instanceof, this can be used anywhere such as typeof and instanceof.
+`is-any-type` is a simple functionality alternative to check data type references such as typeof and instanceof, this can be used anywhere such as typeof and instanceof, for documentation under v4 [check here](https://github.com/restuwahyu13/is-any-type/blob/main/README_V3.md)
 
 - [Installation](#installation)
 - [Example Usage](#example-usage)
@@ -22,141 +14,476 @@
 ## Installation
 
 ```sh
-npm install is-any-type -D or yarn add is-any-type -D
+npm install is-any-type -S or yarn add is-any-type -S
 ```
 
 ### Example Usage
 
-- #### Example Usage Using CommonJS
-
-  ```typescript
-  const { isType } = require('is-any-type')
-
-  let isString = isType('hello wordl') // => true
-  let isNumber = isType(new Date().getFullYear) // => true
-  let isNull = isType(null) => true
-  let isUndefined = isType(undefined) // => true
-  let isObject = isType({}) // => true
-  let isArray = isType([]) // => true
-  let isFunction = isType(() => {}) // => true
-  let isPromise = isType(new Promise((resolve) => resolve('hello wordl'))) // => true
-  let isBuffer = isType(Buffer.from('hello world')) // => true
-  let isBoolean = isType(true) // => true
-
-  let isString = isType(2021) // => false
-  let isNumber = isType('hello world') // => false
-  let isNull = isType(undefined) // => false
-  let isUndefined = isType(null) // => false
-  let isObject = isType({[]) // => false
-  let isArray = isType({}) // => false
-  let isFunction = isType(Promise.resolve('hello world')) // => false
-  let isPromise = isType(() => 'hello world') // => false
-  let isBuffer = isType('hello world') // => false
-  let isBoolean = isType(null) // => false
-  ```
-
-- #### Example Usage Using ES6
+- #### Example Usage Using CommonJS Module
 
   ```javascript
-  import { isType } from 'is-any-type'
+  const { assert } = require('is-any-type')
 
-  let isString = isType('hello wordl') // => true
-  let isNumber = isType(new Date().getFullYear) // => true
-  let isNull = isType(null) => true
-  let isUndefined = isType(undefined) // => true
-  let isObject = isType({}) // => true
-  let isArray = isType([]) // => true
-  let isFunction = isType(() => {}) // => true
-  let isPromise = isType(new Promise((resolve) => resolve('hello wordl'))) // => true
-  let isBuffer = isType(Buffer.from('hello world')) // => true
-  let isBoolean = isType(true) // => true
+  let isString = assert.isString('hello wordl') // => true
+  let isNumber = assert.isNumber(new Date().getFullYear) // => true
+  let isNull = assert.isNull(null) // => true
+  let isUndefined = assert.isUndefined(undefined) // => true
+  let isObject = assert.isObject({}) // => true
+  let isArray = assert.isArray([]) // => true
+  let isFunction = assert.isFunction(() => {}) // => true
+  let isPromise = assert.isPromise(new Promise((resolve) => resolve('hello wordl'))) // => true
+  let isBuffer = assert.isBuffer(Buffer.from('hello world')) // => true
+  let isBoolean = assert.isBoolean(true) // => true
 
-  let isString = isType(2021) // => false
-  let isNumber = isType('hello world') // => false
-  let isNull = isType(undefined) // => false
+  let isString = assert.isString(2021) // => false
+  let isNumber = assert.isNumber('hello world') // => false
+  let isNull = assert.isNull(undefined) // => false
   let isUndefined = isType(null) // => false
-  let isObject = isType({[]) // => false
-  let isArray = isType({}) // => false
-  let isFunction = isType(Promise.resolve('hello world')) // => false
-  let isPromise = isType(() => 'hello world') // => false
-  let isBuffer = isType('hello world') // => false
-  let isBoolean = isType(null) // => false
+  let isObject = assert.isObject([]) // => false
+  let isArray = assert.isArray({}) // => false
+  let isFunction = assert.isFunction(Promise.resolve('hello world')) // => false
+  let isPromise = assert.isPromise(() => 'hello world') // => false
+  let isBuffer = assert.isBuffer('hello world') // => false
+  let isBoolean = assert.isBoolean(null) // => false
+
+  let isStringCompare = assert.isStringCompare('hello wordl', 'hello wordl') // => true
+  let isNumberCompare = assert.isNumberCompare(new Date().getFullYear, new Date().getFullYear) // => true
+  let isNullCompare = assert.isNullCompare(null, null) // => true
+  let isUndefinedCompare = assert.isUndefinedCompare(undefined, undefined) // => true
+  let isObjectCompare = assert.isObjectCompare({}, {}) // => true
+  let isArrayCompare = assert.isArrayCompare([], []) // => true
+  let isFunctionCompare = assert.isFunctionCompare(() => {}, Function) // => true
+  let isPromiseCompare = assert.isPromiseCompare(Promise.resolve('hello world'), Promise.resolve('hello world')) // => true
+  let isBufferCompare = assert.isBufferCompare(Buffer.from('hello world'), Buffer.from('hello world')) // => true
+  let isBooleanCompare = assert.isBooleanCompare(true, false) // => true
+
+  let isStringCompare = assert.isStringCompare('hello wordl', 2021) // => false
+  let isNumberCompare = assert.isNumberCompare(new Date().getFullYear, 'hello wordl') // => false
+  let isNullCompare = assert.isNullCompare(null, true) // => false
+  let isUndefinedCompare = assert.isUndefinedCompare(undefined, null) // => false
+  let isObjectCompare = assert.isObjectCompare({}, []) // => false
+  let isArrayCompare = assert.isArrayCompare([], {}) // => false
+  let isFunctionCompare = assert.isFunctionCompare(() => {}, Promise) // => false
+  let isPromiseCompare = assert.isPromiseCompare(Promise.resolve('hello world'), Promise.resolve('hello world')) // => false
+  let isBufferCompare = assert.isBufferCompare(Buffer.from('hello world'), Promise.resolve('hello wordl')) // => false
+  let isBooleanCompare = assert.isBooleanCompare(true, 2021) // => false
   ```
 
-- #### Example Usage Using ES6 With Jest
+- #### Example Usage Using ESM Module
 
-  ```typescript
-  import { isType } from 'is-any-type'
+  ```javascript
+  import { assert } from 'is-any-type'
 
-  describe('Testing With Jest', () => {
-    let is
+  let isString = assert.isString('hello wordl') // => true
+  let isNumber = assert.isNumber(new Date().getFullYear) // => true
+  let isNull = assert.isNull(null) // => true
+  let isUndefined = assert.isUndefined(undefined) // => true
+  let isObject = assert.isObject({}) // => true
+  let isArray = assert.isArray([]) // => true
+  let isFunction = assert.isFunction(() => {}) // => true
+  let isPromise = assert.isPromise(new Promise((resolve) => resolve('hello wordl'))) // => true
+  let isBuffer = assert.isBuffer(Buffer.from('hello world')) // => true
+  let isBoolean = assert.isBoolean(true) // => true
 
-    beforeEach(() => {
-      is = isType
-    })
+  let isString = assert.isString(2021) // => false
+  let isNumber = assert.isNumber('hello world') // => false
+  let isNull = assert.isNull(undefined) // => false
+  let isUndefined = isType(null) // => false
+  let isObject = assert.isObject([]) // => false
+  let isArray = assert.isArray({}) // => false
+  let isFunction = assert.isFunction(Promise.resolve('hello world')) // => false
+  let isPromise = assert.isPromise(() => 'hello world') // => false
+  let isBuffer = assert.isBuffer('hello world') // => false
+  let isBoolean = assert.isBoolean(null) // => false
 
-    test('is instance value is from string', () => {
-      const type = is('hello wordl')
-      expect(type).toBeDefined()
-      expect(type).toBe('string')
-    })
+  let isStringCompare = assert.isStringCompare('hello wordl', 'hello wordl') // => true
+  let isNumberCompare = assert.isNumberCompare(new Date().getFullYear, new Date().getFullYear) // => true
+  let isNullCompare = assert.isNullCompare(null, null) // => true
+  let isUndefinedCompare = assert.isUndefinedCompare(undefined, undefined) // => true
+  let isObjectCompare = assert.isObjectCompare({}, {}) // => true
+  let isArrayCompare = assert.isArrayCompare([], []) // => true
+  let isFunctionCompare = assert.isFunctionCompare(() => {}, Function) // => true
+  let isPromiseCompare = assert.isPromiseCompare(Promise.resolve('hello world'), Promise.resolve('hello world')) // => true
+  let isBufferCompare = assert.isBufferCompare(Buffer.from('hello world'), Buffer.from('hello world')) // => true
+  let isBooleanCompare = assert.isBooleanCompare(true, false) // => true
 
-    test('is instance value is from number', () => {
-      const type = is(2021)
-      expect(type).toBeDefined()
-      expect(type).toBe('number')
-    })
+  let isStringCompare = assert.isStringCompare('hello wordl', 2021) // => false
+  let isNumberCompare = assert.isNumberCompare(new Date().getFullYear, 'hello wordl') // => false
+  let isNullCompare = assert.isNullCompare(null, true) // => false
+  let isUndefinedCompare = assert.isUndefinedCompare(undefined, null) // => false
+  let isObjectCompare = assert.isObjectCompare({}, []) // => false
+  let isArrayCompare = assert.isArrayCompare([], {}) // => false
+  let isFunctionCompare = assert.isFunctionCompare(() => {}, Promise) // => false
+  let isPromiseCompare = assert.isPromiseCompare(Promise.resolve('hello world'), Promise.resolve('hello world')) // => false
+  let isBufferCompare = assert.isBufferCompare(Buffer.from('hello world'), Promise.resolve('hello wordl')) // => false
+  let isBooleanCompare = assert.isBooleanCompare(true, 2021) // => false
+  ```
 
-    test('is instance value is from object', () => {
-      const type = is({ name: 'john doe' })
-      expect(type).toBeDefined()
-      expect(type).toBe('object')
-    })
+- #### Example Usage Using CommonJS Module With Jest
 
-    test('is instance value is from array', () => {
-      const type = is([1, 2, 3, 4, 5])
-      expect(type).toBeDefined()
-      expect(type).toBe('array')
-    })
+```typescript
+const { assert } = require('is-any-type')
 
-    test('is instance value is from function', () => {
-      const type = is(() => 'hello wordl')
-      expect(type).toBeDefined()
-      expect(type).toBe('function')
-    })
+describe('Is Any Type Group Testing', () => {
 
-    test('is instance value is from promise', () => {
-      const type = is(Promise.resolve('hello wordl'))
-      expect(type).toBeDefined()
-      expect(type).toBe('promise')
-    })
-
-    test('is instance value is from buffer', () => {
-      const type = is(Buffer.from('hello wordl'))
-      expect(type).toBeDefined()
-      expect(type).toBe('buffer')
-    })
-
-    test('is instance value is from null', () => {
-      const type = is(null)
-      expect(type).toBeDefined()
-      expect(type).toBe('null')
-    })
-
-    test('is instance value is from undefined', () => {
-      let result
-      const type = is(result)
-      expect(type).toBeDefined()
-      expect(type).toBe('undefined')
-    })
-    
-    test('is instance value is from boolean', () => {
-      const type = is(true)
-      expect(type).toBeDefined()
-      expect(type).toBe('boolean')
-	  })
+  test('Should be value is string', () => {
+    const type = assert.isString('hello wordl')
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
   })
-  ```
+
+  test('Should be string match value from string', () => {
+    const type = assert.isStringCompare('hello wordl', 'hello wordl')
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be value is number', () => {
+    const type = assert.isNumber(2021)
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be number match value from number', () => {
+    const type = assert.isNumberCompare(2021, 2021)
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be value is object', () => {
+    const type1 = assert.isObject({ name: 'john doe' })
+    const type2 = assert.isObject({})
+    
+    expect(type1).toBeDefined()
+    expect(type2).toBeDefined()
+
+    expect(type1).toBeTruthy()
+    expect(type2).toBeTruthy()
+  })
+
+  test('Should be object match value from object', () => {
+    const type1 = assert.isObjectCompare({ name: 'john doe' }, { name: 'john doe' })
+    const type2 = assert.isObjectCompare({}, {})
+
+    expect(type1).toBeDefined()
+    expect(type2).toBeDefined()
+
+    expect(type1).toBeTruthy()
+    expect(type2).toBeTruthy()
+  })
+
+  test('Should be value is array', () => {
+    const type1 = assert.isArray([1, 2, 3, 4, 5])
+    const type2 = assert.isArray([])
+    
+    expect(type1).toBeDefined()
+    expect(type2).toBeDefined()
+
+    expect(type1).toBeTruthy()
+    expect(type2).toBeTruthy()
+  })
+
+  test('Should be array match value from array', () => {
+    const type1 = assert.isArrayCompare([1, 2, 3, 4, 5], [6, 7, 8, 9, 10])
+    const type2 = assert.isArrayCompare([], [])
+
+    expect(type1).toBeDefined()
+    expect(type2).toBeDefined()
+
+    expect(type1).toBeTruthy()
+    expect(type2).toBeTruthy()
+  })
+
+  test('Should be value is function', () => {
+    const type = assert.isFunction(() => 'hello wordl')
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be function match value from function', () => {
+    const type = assert.isFunctionCompare(() => 'hello wordl', () => 'hello wordl 2')
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+
+  test('Should be value is promise', () => {
+    const promise = async () => 'hello wordl'
+
+    const type1 = assert.isPromise(Promise.resolve('hello wordl'))
+    const type2 = assert.isPromise(new Promise((resolve, reject) => resolve('hello wordl')))
+    const type3 = assert.isPromise(promise())
+
+    expect(type1).toBeDefined()
+    expect(type2).toBeDefined()
+    expect(type3).toBeDefined()
+
+    expect(type1).toBeTruthy()
+    expect(type2).toBeTruthy()
+    expect(type3).toBeTruthy()
+  })
+
+  test('Should be promise match value from promise', () => {
+    const promise = async () => 'hello wordl'
+
+    const type1 = assert.isPromiseCompare(Promise.resolve('hello wordl'), Promise.resolve('hello wordl'))
+    const type2 = assert.isPromiseCompare(new Promise((resolve, reject) => resolve('hello wordl')), promise())
+    const type3 = assert.isPromiseCompare(promise(), Promise.resolve('hello wordl'))
+
+    expect(type1).toBeDefined()
+    expect(type2).toBeDefined()
+    expect(type3).toBeDefined()
+
+    expect(type1).toBeTruthy()
+    expect(type2).toBeTruthy()
+    expect(type3).toBeTruthy()
+  })
+
+
+  test('Should be value is buffer', () => {
+    const type = assert.isBuffer(Buffer.from('hello wordl'))
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be buffer match value from buffer', () => {
+    const type = assert.isBufferCompare(Buffer.from('hello wordl'), Buffer.from('hello john'))
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be value is null', () => {
+    const type = assert.isNull(null)
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be null match value from null', () => {
+    const type = assert.isNullCompare(null, null)
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be value is from undefined', () => {
+    let result
+    const type = assert.isUndefined(result)
+    
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('undefined match value from undefined', () => {
+    const type = assert.isUndefinedCompare(undefined, undefined)
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be value is from boolean', () => {
+    const type = assert.isBoolean(true)
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be boolean match value from boolean', () => {
+    const type = assert.isBooleanCompare(true, false)
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+})
+```
+
+- #### Example Usage Using ESM Module With Jest
+
+```typescript
+import { assert } from 'is-any-type'
+
+describe('Is Any Type Group Testing', () => {
+
+  test('Should be value is string', () => {
+    const type = assert.isString('hello wordl')
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be string match value from string', () => {
+    const type = assert.isStringCompare('hello wordl', 'hello wordl')
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be value is number', () => {
+    const type = assert.isNumber(2021)
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be number match value from number', () => {
+    const type = assert.isNumberCompare(2021, 2021)
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be value is object', () => {
+    const type1 = assert.isObject({ name: 'john doe' })
+    const type2 = assert.isObject({})
+    
+    expect(type1).toBeDefined()
+    expect(type2).toBeDefined()
+
+    expect(type1).toBeTruthy()
+    expect(type2).toBeTruthy()
+  })
+
+  test('Should be object match value from object', () => {
+    const type1 = assert.isObjectCompare({ name: 'john doe' }, { name: 'john doe' })
+    const type2 = assert.isObjectCompare({}, {})
+
+    expect(type1).toBeDefined()
+    expect(type2).toBeDefined()
+
+    expect(type1).toBeTruthy()
+    expect(type2).toBeTruthy()
+  })
+
+  test('Should be value is array', () => {
+    const type1 = assert.isArray([1, 2, 3, 4, 5])
+    const type2 = assert.isArray([])
+    
+    expect(type1).toBeDefined()
+    expect(type2).toBeDefined()
+
+    expect(type1).toBeTruthy()
+    expect(type2).toBeTruthy()
+  })
+
+  test('Should be array match value from array', () => {
+    const type1 = assert.isArrayCompare([1, 2, 3, 4, 5], [6, 7, 8, 9, 10])
+    const type2 = assert.isArrayCompare([], [])
+
+    expect(type1).toBeDefined()
+    expect(type2).toBeDefined()
+
+    expect(type1).toBeTruthy()
+    expect(type2).toBeTruthy()
+  })
+
+  test('Should be value is function', () => {
+    const type = assert.isFunction(() => 'hello wordl')
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be function match value from function', () => {
+    const type = assert.isFunctionCompare(() => 'hello wordl', () => 'hello wordl 2')
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+
+  test('Should be value is promise', () => {
+    const promise = async () => 'hello wordl'
+
+    const type1 = assert.isPromise(Promise.resolve('hello wordl'))
+    const type2 = assert.isPromise(new Promise((resolve, reject) => resolve('hello wordl')))
+    const type3 = assert.isPromise(promise())
+
+    expect(type1).toBeDefined()
+    expect(type2).toBeDefined()
+    expect(type3).toBeDefined()
+
+    expect(type1).toBeTruthy()
+    expect(type2).toBeTruthy()
+    expect(type3).toBeTruthy()
+  })
+
+  test('Should be promise match value from promise', () => {
+    const promise = async () => 'hello wordl'
+
+    const type1 = assert.isPromiseCompare(Promise.resolve('hello wordl'), Promise.resolve('hello wordl'))
+    const type2 = assert.isPromiseCompare(new Promise((resolve, reject) => resolve('hello wordl')), promise())
+    const type3 = assert.isPromiseCompare(promise(), Promise.resolve('hello wordl'))
+
+    expect(type1).toBeDefined()
+    expect(type2).toBeDefined()
+    expect(type3).toBeDefined()
+
+    expect(type1).toBeTruthy()
+    expect(type2).toBeTruthy()
+    expect(type3).toBeTruthy()
+  })
+
+
+  test('Should be value is buffer', () => {
+    const type = assert.isBuffer(Buffer.from('hello wordl'))
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be buffer match value from buffer', () => {
+    const type = assert.isBufferCompare(Buffer.from('hello wordl'), Buffer.from('hello john'))
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be value is null', () => {
+    const type = assert.isNull(null)
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be null match value from null', () => {
+    const type = assert.isNullCompare(null, null)
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be value is from undefined', () => {
+    let result
+    const type = assert.isUndefined(result)
+    
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('undefined match value from undefined', () => {
+    const type = assert.isUndefinedCompare(undefined, undefined)
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be value is from boolean', () => {
+    const type = assert.isBoolean(true)
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+
+  test('Should be boolean match value from boolean', () => {
+    const type = assert.isBooleanCompare(true, false)
+
+    expect(type).toBeDefined()
+    expect(type).toBeTruthy()
+  })
+})
+```
 
 
 

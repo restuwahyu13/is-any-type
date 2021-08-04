@@ -4,12 +4,7 @@
 		"sourceType": "module"
 	},
 	"parser": "@typescript-eslint/parser",
-	"extends": [
-		"plugin:@typescript-eslint/recommended",
-		"plugin:prettier/recommended",
-		"plugin:jest/recommended",
-		"standard"
-	],
+	"extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended", "plugin:jest/recommended", "standard"],
 	"rules": {
 		"prettier/prettier": 0,
 		"no-tabs": 0,
@@ -28,7 +23,9 @@
 		"jest/valid-expect-in-promise": 1,
 		"jest/no-conditional-expect": 1,
 		"@typescript-eslint/no-empty-interface": 0,
-		"generator-star-spacing": 0
+		"generator-star-spacing": 0,
+		"no-unneeded-ternary": 0,
+		"@typescript-eslint/ban-types": 1
 	},
 	"env": {
 		"node": true,
