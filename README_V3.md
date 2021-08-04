@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/restuwahyu13/is-any-type.svg?branch=main)](https://travis-ci.org/restuwahyu13/is-any-type) [![Coverage Status](https://coveralls.io/repos/github/restuwahyu13/is-any-type/badge.svg?branch=main)](https://coveralls.io/github/restuwahyu13/is-any-type?branch=main) [![npm version](https://badge.fury.io/js/is-any-type.svg)](https://badge.fury.io/js/is-any-type) ![node-current](https://img.shields.io/node/v/is-any-type?style=flat-square) ![npm](https://img.shields.io/npm/dm/is-any-type) ![npm bundle size](https://img.shields.io/bundlephobia/min/is-any-type) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/is-any-type) ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/restuwahyu13/is-any-type) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/restuwahyu13/is-any-type/blob/main/CONTRIBUTING.md)
 
-`is-any-type` is a simple functionality alternative to check data type references such as typeof and instanceof, this can be used anywhere such as typeof and instanceof, for documentation v4 [check  here](https://github.com/restuwahyu13/is-any-type/blob/main/README.md).
+`is-any-type` simple functionality alternative to check data type references such as typeof and instanceof, this can be used anywhere such as typeof and instanceof, for documentation v4 [check  here](https://github.com/restuwahyu13/is-any-type/blob/main/README.md).
 
 - [Installation](#installation)
 - [Example Usage](#example-usage)
